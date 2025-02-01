@@ -11,6 +11,7 @@ import MapKit
 import _MapKit_SwiftUI
 
 //mapLocation и mapRegion две разные переменные, которые нам нужно обновлять
+//когда обновиться mapLocation, автоматически обновиться mapRegion
 
 //Этот класс прописывается для ViewModel
 class locationViewModel: ObservableObject {
@@ -18,11 +19,15 @@ class locationViewModel: ObservableObject {
     
     @Published var mapLocation: locationsModel {
         didSet {
-            updateMapRegion(location: mapLocation)  //Это сделано для того что бы при обновленни локации, местоположение обновлялось автоматически
+            //Каждый раз, когда мы задаем значение для mapLocation, вызывается обновление области карты(updateMapRegion) и передается текушее место положение (mapLocation)
+            updateMapRegion(location: mapLocation)
         }
     }
     
     @Published var mapRegion: MapCameraPosition = MapCameraPosition.region(MKCoordinateRegion())
+    
+    @Published var showlistCity: Bool = false
+    
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     init() {
@@ -39,5 +44,11 @@ class locationViewModel: ObservableObject {
                 span: mapSpan))
         }
         
+    }
+    
+    func toggleListCity() {
+        withAnimation(.easeInOut) {
+            showlistCity.toggle()
+        }
     }
 }

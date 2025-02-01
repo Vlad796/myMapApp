@@ -37,9 +37,9 @@ class LocationsDataService {
                  coordinates: CLLocationCoordinate2D(latitude: 45.024595, longitude: 38.969976),
                  description: "Алекса́ндровская триумфа́льная а́рка (также Ца́рские воро́та) — памятник в русском стиле в центре Краснодара, расположенный на пересечении двух улиц — Красной и Бабушкина. Возведена к визиту Императора Александра III вместе с августейшей семьёй в Екатеринодар в 1888 году. Разрушена в 1928 году, восстановлена в 2008 году на новом месте.",
                  imageNames: [
-                    "russia-AlexanderArch-1",
-                    "russia-AlexanderArch-2",
-                    "russia-AlexanderArch-3"
+                    "russia-MonumentToTheKubanCossacks-1",
+                    "russia-MonumentToTheKubanCossacks-2",
+                    "russia-MonumentToTheKubanCossacks-3"
                  ],
                  link: "https://ru.wikipedia.org/wiki/Царские_ворота_(Краснодар)"),
         
