@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 import _MapKit_SwiftUI
 
-struct locationsModel: Identifiable {
+struct locationsModel: Identifiable, Equatable {
     
     let name: String
     let cityName: String
@@ -21,6 +21,10 @@ struct locationsModel: Identifiable {
     //Тут мы делаем id по названию достопримечательности и названия города
     var id: String {
         name + cityName
+    }
+    
+    static func == (lhs: locationsModel, rhs: locationsModel) -> Bool {
+         lhs.id == rhs.id
     }
     
 }

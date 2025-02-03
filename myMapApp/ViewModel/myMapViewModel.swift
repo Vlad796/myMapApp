@@ -28,6 +28,8 @@ class locationViewModel: ObservableObject {
     
     @Published var showlistCity: Bool = false
     
+    @Published var sheetLocation: locationsModel? = nil
+    
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     init() {
@@ -50,5 +52,31 @@ class locationViewModel: ObservableObject {
         withAnimation(.easeInOut) {
             showlistCity.toggle()
         }
+    }
+    
+    func showNexLocation(location: locationsModel) {
+        withAnimation(.easeInOut) {
+            mapLocation = location
+            showlistCity = false
+        }
+    }
+    
+    func nextButtonPresed() {
+        //вычисляем где сейчас находимся
+        guard let currentIndex = locationView.firstIndex(where: { $0 == mapLocation}) else {
+            print("Что то не так!")
+            return
+        }
+        //Добавляем + 1 к нынешнему id
+        let nextIndex = currentIndex + 1
+        
+        //Перезапускаем вычисление, и пускаем массив заново, если мы наодимся на последнем id массива 
+        guard locationView.indices.contains(nextIndex) else {
+            guard let firstIndex = locationView.first else {return}
+            showNexLocation(location: firstIndex)
+            return
+        }
+        let nextLocatin = locationView[nextIndex]
+        showNexLocation(location: nextLocatin)
     }
 }

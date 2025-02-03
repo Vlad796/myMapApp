@@ -14,8 +14,14 @@ struct myMapCityList: View {
     var body: some View {
         List {
             ForEach(vm.locationView) { location in
-                cityList(location: location)
-                    .background(Color.clear )
+                Button {
+                    vm.showNexLocation(location: location)
+                } label: {
+                    cityList(location: location)
+                        .background(Color.clear )
+                }
+
+                
             }
         }
         .listStyle(PlainListStyle())

@@ -15,14 +15,20 @@ struct myMapContentView: View {
     
     var body: some View {
         ZStack {
-            Map(position: $vm.mapRegion)
+             
+            mapView
+            
             VStack {
                 header
                 .padding()
                 
-                
                 Spacer()
+                
+                allLocation
             }
+        }
+        .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+            myMapDetailSheet(location: location)
         }
     }
 }
@@ -33,6 +39,21 @@ struct myMapContentView: View {
 }
 
 extension myMapContentView {
+    
+    private var mapView: some View {
+        Map(position: $vm.mapRegion) {
+            ForEach(vm.locationView) { location in
+                Annotation("", coordinate: location.coordinates) {
+                    myMapUserMarkets()
+                        .scaleEffect(vm.mapLocation == location ? 1 : 0.7)
+                        .onTapGesture {
+                            vm.showNexLocation(location: location)
+                        }
+                }
+            }
+        }
+    }
+    
     private var header: some View {
         VStack{
             Button {
@@ -44,6 +65,7 @@ extension myMapContentView {
                     .foregroundStyle(.primary)
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
+                    .padding(.leading, 20)
                     .overlay(alignment: .leading) {
                         Image(systemName: "chevron.down")
                             .foregroundStyle(.primary)
@@ -59,5 +81,17 @@ extension myMapContentView {
         .background(Color.white.opacity(0.8))
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
+    }
+    
+    private var allLocation: some View {
+        ZStack{
+            ForEach(vm.locationView) { location in
+                if vm.mapLocation == location {
+                    myMapUnderCard(location: location)
+                        .shadow(color: .black.opacity(0.3), radius: 5)
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading )))
+                }
+            }
+        }
     }
 }

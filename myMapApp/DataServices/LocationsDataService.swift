@@ -19,21 +19,10 @@ class LocationsDataService {
     
     static let locations: [locationsModel] = [
         
-        //Царские ворота
-        locationsModel(name: "Alexander Arch",
-                 cityName: "Krasnodar",
-                 coordinates: CLLocationCoordinate2D(latitude: 45.046525, longitude: 38.978352),
-                 description: "Алекса́ндровская триумфа́льная а́рка (также Ца́рские воро́та) — памятник в русском стиле в центре Краснодара, расположенный на пересечении двух улиц — Красной и Бабушкина. Возведена к визиту Императора Александра III вместе с августейшей семьёй в Екатеринодар в 1888 году. Разрушена в 1928 году, восстановлена в 2008 году на новом месте.",
-                 imageNames: [
-                    "russia-AlexanderArch-1",
-                    "russia-AlexanderArch-2",
-                    "russia-AlexanderArch-3"
-                 ],
-                 link: "https://ru.wikipedia.org/wiki/Царские_ворота_(Краснодар)"),
         
         //Памятник Кубанскому казачеству
-        locationsModel(name: "Monument to the Kuban Cossacks",
-                 cityName: "Krasnodar",
+        locationsModel(name: "Памятник Кубанскому казачеству",
+                 cityName: "Краснодар",
                  coordinates: CLLocationCoordinate2D(latitude: 45.024595, longitude: 38.969976),
                  description: "Алекса́ндровская триумфа́льная а́рка (также Ца́рские воро́та) — памятник в русском стиле в центре Краснодара, расположенный на пересечении двух улиц — Красной и Бабушкина. Возведена к визиту Императора Александра III вместе с августейшей семьёй в Екатеринодар в 1888 году. Разрушена в 1928 году, восстановлена в 2008 году на новом месте.",
                  imageNames: [
@@ -43,12 +32,24 @@ class LocationsDataService {
                  ],
                  link: "https://ru.wikipedia.org/wiki/Царские_ворота_(Краснодар)"),
         
+        //Царские ворота
+        locationsModel(name: "Александровская арка",
+                 cityName: "Краснодар",
+                 coordinates: CLLocationCoordinate2D(latitude: 45.046525, longitude: 38.978352),
+                 description: "Алекса́ндровская триумфа́льная а́рка (также Ца́рские воро́та) — памятник в русском стиле в центре Краснодара, расположенный на пересечении двух улиц — Красной и Бабушкина. Возведена к визиту Императора Александра III вместе с августейшей семьёй в Екатеринодар в 1888 году. Разрушена в 1928 году, восстановлена в 2008 году на новом месте.",
+                 imageNames: [
+                    "russia-AlexanderArch-1",
+                    "russia-AlexanderArch-2",
+                    "russia-AlexanderArch-3"
+                 ],
+                 link: "https://ru.wikipedia.org/wiki/Царские_ворота_(Краснодар)"),
+        
         //Колезей
         locationsModel(
-            name: "Colosseum",
-            cityName: "Rome",
+            name: "Колизей",
+            cityName: "Рим",
             coordinates: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922),
-            description: "The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world today, despite its age.",
+            description: "Колизе́й (лат. Colosseus, colosseum — исполинский), или амфитеатр Флавиев (лат. Amphitheatrum Flavium) — амфитеатр, памятник архитектуры Древнего Рима, наиболее известное и одно из самых грандиозных сооружений Древнего мира, сохранившихся до нашего времени. Находится в Риме, в низине между Эсквилинским, Палатинским и Целиевым холмами.",
             imageNames: [
                 "rome-colosseum-1",
                 "rome-colosseum-2",
@@ -58,10 +59,10 @@ class LocationsDataService {
         
         //Пантеон
         locationsModel(
-            name: "Pantheon",
-            cityName: "Rome",
+            name: "Пантеон",
+            cityName: "Рим",
             coordinates: CLLocationCoordinate2D(latitude: 41.8986, longitude: 12.4769),
-            description: "The Pantheon is a former Roman temple and since the year 609 a Catholic church, in Rome, Italy, on the site of an earlier temple commissioned by Marcus Agrippa during the reign of Augustus.",
+            description: "Пантео́н (др.-греч. πάνθειον, от др.-греч. πάντες — все и θεός — Бог) — так называемый «Храм всех богов», выдающийся памятник истории и архитектуры древнего Рима, построенный между 118 и 128 годами н. э.",
             imageNames: [
                 "rome-pantheon-1",
                 "rome-pantheon-2",
@@ -71,10 +72,10 @@ class LocationsDataService {
         
         //Фонтан Твери
         locationsModel(
-            name: "Trevi Fountain",
-            cityName: "Rome",
+            name: "Фонтан Треви",
+            cityName: "Рим",
             coordinates: CLLocationCoordinate2D(latitude: 41.9009, longitude: 12.4833),
-            description: "The Trevi Fountain is a fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini and several others. Standing 26.3 metres high and 49.15 metres wide, it is the largest Baroque fountain in the city and one of the most famous fountains in the world.",
+            description: "Фонта́н Тре́ви (итал. Fontana di Trevi) — самый крупный фонтан Рима; вместе с фасадом примыкающего к нему здания, являющийся частью величественной архитектурно-скульптурной композиции в стиле позднего римского барокко с элементами неоклассицизма. Фонтан построен в 1732—1762 годах по проекту архитектора Николо Сальви. Скульптурную отделку фонтана, а именно статуи Нептуна и аллегорий воды создал известный итальянский скульптор барокко Джованни Лоренцо Бернини.",
             imageNames: [
                 "rome-trevifountain-1",
                 "rome-trevifountain-2",
@@ -84,10 +85,10 @@ class LocationsDataService {
         
         //Эльфелева башня
         locationsModel(
-            name: "Eiffel Tower",
-            cityName: "Paris",
+            name: "Эйфелева башня",
+            cityName: "Париж",
             coordinates: CLLocationCoordinate2D(latitude: 48.8584, longitude: 2.2945),
-            description: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed 'La dame de fer', it was constructed from 1887 to 1889 as the centerpiece of the 1889 World's Fair and was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognizable structures in the world.",
+            description: "Э́йфелева ба́шня (фр. tour Eiffel, МФА: [tu.ʁ‿ɛ.fɛl]) — металлическая башня в центре Парижа, самая узнаваемая его архитектурная достопримечательность. Названа в честь главного конструктора Гюстава Эйфеля; сам Эйфель называл её просто «300-метровая башня» (tour de 300 mètres).",
             imageNames: [
                 "paris-eiffeltower-1",
                 "paris-eiffeltower-2",
@@ -96,10 +97,10 @@ class LocationsDataService {
         
         //Лувр
         locationsModel(
-            name: "Louvre Museum",
-            cityName: "Paris",
+            name: "Лувр",
+            cityName: "Париж",
             coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
-            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            description: "Музей Лувра (фр. Musée du Louvre; часто используется просто название Лувр) — один из крупнейших и самый популярный художественный музей мира. Музей расположен в центре Парижа, на правом берегу Сены, на улице Риволи, в 1-м округе столицы. В 2018 году число посетителей Лувра превысило 10 млн человек, что является рекордом. Здание музея — старинный королевский дворец (Palais du Louvre). Конная статуя Людовика XIV обозначает точку начала так называемой исторической оси Парижа.",
             imageNames: [
                 "paris-louvre-1",
                 "paris-louvre-2",
