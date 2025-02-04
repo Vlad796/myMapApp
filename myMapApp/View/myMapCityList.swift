@@ -18,12 +18,10 @@ struct myMapCityList: View {
                     vm.showNexLocation(location: location)
                 } label: {
                     cityList(location: location)
-                        .background(Color.clear )
                 }
-
-                
             }
         }
+        .background(.ultraThinMaterial)
         .listStyle(PlainListStyle())
     }
 }

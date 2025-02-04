@@ -73,13 +73,14 @@ extension myMapContentView {
                             .rotationEffect(Angle(degrees: vm.showlistCity ? 180 : 0))
                     }
             }
+            
             if vm.showlistCity {
                 myMapCityList()
             }
                 
         }
-        .background(Color.white.opacity(0.8))
-        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .background( RoundedRectangle(cornerRadius: 10)
+            .fill(.ultraThinMaterial))
         .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
     }
     
